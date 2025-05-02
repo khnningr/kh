@@ -10,6 +10,7 @@ final_space = true
   red = '#D81E5B'
   white = '#E0DEF4'
   yellow = '#F3AE35'
+  grey = '#6c6c6c'
 
 [[blocks]]
   type = 'prompt'
@@ -29,7 +30,7 @@ final_space = true
   [[blocks.segments]]
     type = 'git'
     style = 'plain'
-    foreground = '#6c6c6c'
+    foreground = 'p:grey'
     background = 'transparent'
     template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}↓{{ end }}{{ if gt .Ahead 0 }}↑{{ end }}</>'
 
@@ -37,6 +38,20 @@ final_space = true
       branch_icon = ''
       commint_icon = "@"
       fetch_status = true
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'yellow'
+    background = 'transparent'
+    template = '{{ div .Ms 1000 }}s'
+
+    [blocks.segments.properties]
+      threshold = 5000
 
 [[blocks]]
   type = 'prompt'
@@ -61,5 +76,8 @@ final_space = true
   background = 'transparent'
   template = '➜ '
 
-
+[secondary_prompt]
+  foreground = 'magenta'
+  background = 'transparent'
+  template = '➜ '
 

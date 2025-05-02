@@ -10,6 +10,11 @@ else
   export GPG_TTY="$TTY"
 fi
 
+# Para macOS.
+if [[ -f "/opt/homebrew/bin/brew" ]] then 
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Ubicación del gestor de plugins, zinit y los plugins.
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git" 
 # Se le conoce a "${XDG_DATA_HOME:-${HOME}/.local/share}", como 'Parameter 
