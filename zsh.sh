@@ -11,9 +11,7 @@ DIR_DOTFILES="$HOME/kh/"
 # Paquetes necesarios.
 zen=(
   "zsh"
-  "vivaldi"
-
-
+  "git"
   )
 
 sudo pacman -S --needed --noconfirm "${zen[@]}" 
@@ -28,7 +26,4 @@ stow .
 # chsh <USUARIO> - este comando permite cambiar el Shell.
 # para ejemplo: /usr/bin/bash o /usr/bin/zsh
 # echo $SHELL - para ver el Shell que se está usando.
-
-
-
 
