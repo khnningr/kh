@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DIR_DOTFILES="$HOME/hyprcrow/"
+DIR_DOTFILES="$HOME/kh/"
 
 # Verifica si existe el directorio, saliendo del scrip,
 # si no existe.
@@ -22,7 +22,8 @@ sudo pacman -S --needed --noconfirm "${zen[@]}"
 cd "$HOME"
 mv .zshrc .zshrc.bak
 cd "$DIR_DOTFILES" 
-stow 
+stow .
+
 # Definir el Shell.
 # chsh <USUARIO> - este comando permite cambiar el Shell.
 # para ejemplo: /usr/bin/bash o /usr/bin/zsh
