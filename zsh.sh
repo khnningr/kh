@@ -2,23 +2,25 @@
 
 DIR_DOTFILES="$HOME/kh/"
 
-# Verifica si existe el directorio, saliendo del scrip,
-# si no existe.
+# Verifica si existe el directorio.
 [ -d "$DIR_DOTFILES" ] || {
   exit 1
 }
 
 # Paquetes necesarios.
-zen=(
+PAQUETES=(
   "zsh"
   "git"
+  "fzf"
+  "zoxide"
+  "oh-my-posh-bin"
   )
 
-sudo pacman -S --needed --noconfirm "${zen[@]}" 
+sudo pacman -S --needed --noconfirm "${PAQUETES[@]}" 
 
 # Stow
 cd "$HOME"
-mv .zshrc .zshrc.bak
+[[ ! -f ~/.zshrc ]] || mv .zshrc .zshrc.bak
 cd "$DIR_DOTFILES" 
 stow .
 
