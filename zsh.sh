@@ -14,6 +14,7 @@ PAQUETES=(
   "fzf"
   "zoxide"
   "oh-my-posh-bin"
+  "exa"
   )
 
 sudo pacman -S --needed --noconfirm "${PAQUETES[@]}" 

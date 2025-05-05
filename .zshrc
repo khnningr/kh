@@ -3,6 +3,10 @@
 # Añadir directorios al PATH.
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 if [ -n "$TTY" ]; then
   export GPG_TTY=$(tty)
@@ -41,6 +45,10 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # Programas
 export TERM=wezterm
+export EDITOR=nvim 
+export BROWSER=vivaldi
+export SHELL="/bin/zsh"
+
 
 # Añadir ZSH plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -96,14 +104,18 @@ alias nvim='nvim'
 alias c='clear'
 alias m='mirror'
 alias s='paru'
-alias u='sudo pacman -Syu && paru -Syu'
-alias i='paru -S --needed'
-alias r='paru -Rns'
+alias u='sudo pacman -Syu && paru -Syu' # dnf upgrade
+alias i='paru -S --needed' # dnf install
+alias r='paru -Rns' # dnf remove
+# alias ls='exa --icons --color=always'
 
 # Shell integrations
 eval "$(fzf --zsh)" # <CTRL>R.
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(zellij setup --generate-auto-start zsh)"
+# 'zellij list-sessions' - lista todas las sesiones.
+# 'zellij a «NOMBRE SESIÓN»' - abre una sesión en concreto.
+# 'zellij kill-all-sessions' - cierra todas las sesiones.
 
 # Corregir fonts en ventanas JAVA.
 export AWT_FONT_FAMILY='Iosevka Term Nerd Font'
