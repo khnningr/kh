@@ -30,3 +30,4 @@ stow .
 # para ejemplo: /usr/bin/bash o /usr/bin/zsh
 # echo $SHELL - para ver el Shell que se está usando.
 
+chsh -s $(which zsh)
