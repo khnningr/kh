@@ -112,7 +112,7 @@ alias r='paru -Rns' # dnf remove
 # Shell integrations
 eval "$(fzf --zsh)" # <CTRL>R.
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(zellij setup --generate-auto-start zsh)"
+# eval "$(zellij setup --generate-auto-start zsh)"
 # 'zellij list-sessions' - lista todas las sesiones.
 # 'zellij a «NOMBRE SESIÓN»' - abre una sesión en concreto.
 # 'zellij kill-all-sessions' - cierra todas las sesiones.
