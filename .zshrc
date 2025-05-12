@@ -121,3 +121,7 @@ eval "$(zoxide init --cmd cd zsh)"
 export AWT_FONT_FAMILY='Iosevka Term Nerd Font'
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 export JAVA_TOOL_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
+
+# Paleta de colores, para los terminales.
+#source ~/.local/bin/variables.sh
+#sh ~/.local/bin/terminal.sh
